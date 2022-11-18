@@ -22,7 +22,7 @@ public class WallCubeBehaviour : MonoBehaviour
             rb.isKinematic = false;
             rb.useGravity = true;
             rb.AddExplosionForce(touchForce, collision.transform.position, 1f, 1f, ForceMode.Impulse);
-            Destroy(gameObject, 1.5f);
+            Destroy(gameObject, 0.5f);
         }
     }
 }

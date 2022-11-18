@@ -104,9 +104,7 @@ public class PlayerInput : MonoBehaviour
         if (swipeDelta.magnitude > deadZone)
         {
             if (Mathf.Abs(swipeDelta.x) > Mathf.Abs(swipeDelta.y))
-                GlobalEventManager.Swipe(swipeDelta.x > 0 ? Vector2.right : Vector2.left);
-            else
-                GlobalEventManager.Swipe(swipeDelta.y > 0 ? Vector2.up : Vector2.down);
+                GlobalEventManager.Swipe(swipeDelta.x > 0 ? Vector2.up : Vector2.down);
 
             ResetSwipe();
         }
@@ -121,21 +119,13 @@ public class PlayerInput : MonoBehaviour
 
     private void CheckKeyInput()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             GlobalEventManager.Swipe(Vector2.up);
         }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            GlobalEventManager.Swipe(Vector2.down);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            GlobalEventManager.Swipe(Vector2.right);
-        }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            GlobalEventManager.Swipe(Vector2.left);
+            GlobalEventManager.Swipe(Vector2.down);
         }
     }
 }
